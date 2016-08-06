@@ -13,7 +13,7 @@
         <div id="header">
             <div class="content">
                 <div id="title">
-                    <a href="">Advocacy Admin</a>
+                    <a href="/admin">Advocacy Admin</a>
                 </div>
                 <div class="button"><a href="/">Advocacy</a></div>
             </div>
