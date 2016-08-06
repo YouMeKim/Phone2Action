@@ -1,4 +1,4 @@
-// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
 $primary: #046791;
 $white: #fafafa;
@@ -21,11 +21,11 @@ body {
 .content {
     width: 1000px;
     margin: 0px auto;
-    overflow: auto;
 }
 #header {
     background-color: $primary;
     color: $white;
+    overflow: auto;
 
     #title {
         float: left;
@@ -67,6 +67,41 @@ body {
     border: 1px solid $primary;
 }
 
+.petition {
+    overflow: auto;
+    padding: 10px;
+    margin: 0px;
+
+    a {
+        display: inline-block;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        padding: 10px;
+        width: 100%;
+        cursor: pointer;
+
+        .title {
+            font-size: 20px;
+            font-weight: 400;
+            color: #333;
+            margin: 0px;
+            padding: 0px;
+            line-height: 24px;
+            float: left;
+        }
+        .description {
+            float: right;
+            font-size: 12px;
+            line-height: 20px;
+            color: #888;
+        }
+    }
+}
+.petition:hover {
+    background-color: #eee;
+}
+
 label {
     font-size: 12px;
 }
@@ -91,11 +126,10 @@ button {
     border-radius: 20px;
     text-decoration: none;
 }
+.button-large:hover {
+    text-decoration: none;
+    color: $white;
+}
 
 .section { min-height: 400px; }
 .title { line-height: 200px; font-weight: 100; font-size: 60px; }
-.notice { color: #555; font-size: 14px; }
-
-.text-center { text-align: center; }
-.text-left { text-align: left; }
-.text-right { text-align: right; }
