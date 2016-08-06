@@ -1,20 +1,26 @@
 @extends('admin.layout')
 
 @section('content')
-    <div class="text-center"><p class="notice">Please log in to access the admin panel</p></div>
+
+    <h1 class="text-center">Active Petitions</h1>
+
     <div class="row">
-        <div class="col-md-4 col-md-offset-4">
-            <form id="form-login">
-                <div class="form-group">
-                    <label for="username">Username</label>
-                    <input type="text" class="form-control" id="username" name="username">
-                </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password" name="password">
-                </div>
-                <button type="submit" class="btn btn-primary">Login</button>
-            </form>
-        </div>
+        <table class="table table-hover">
+            <thead>
+                <tr><th>Public</th><th>Petition Title</th><th>Number of Signatures</th><th></th><th></th></tr>
+            </thead>
+            <tbody>
+            @foreach ($petitions as $petition)
+                <tr>
+                    <td>{{ $petition->public }}</td><td>{{ $petition->title }}</td><td>{{ $petition->signatures()->count() }} signatures</td><td><a href="/admin/petitions/{{ $petition->id }}/edit">edit</a></td><td><a href="/admin/petitions/{{ $petition->id }}/delete">delete</a></td>
+                </tr>
+            @endforeach
+            </tbody>
+        </table>
+        <p class="text-muted text-right"><small>Deleting petitions cannot be undone</small></p>
     </div>
+    <div class="row">
+        <a class="btn btn-success btn-lg" href="/admin/petitions/create">Create New Petition</a>
+    </div>
+
 @stop

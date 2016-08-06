@@ -23,18 +23,44 @@ class PetitionsController extends Controller
         return view('petitions.show', compact('petition', 'signatures'));
     }
 
-    public function edit(Petition $petition) {
-        $signatures = $petition->signatures();
-        $fields = $petition->fields();
-        $assets = $peitions->assets();
+    public function create() {
+        $petition = new Petition;
+        return view('admin.petitions.edit', compact('petition'));
+    }
 
-        return view('petitions.edit', compact('petition', 'signatures', 'fields', 'assets'));
+    public function store(Request $request) {
+        $this->validate($request, [
+            'title'             =>  'required',
+            'summary'           =>  'required',
+            'body'              =>  'required',
+            'thankyoumessage'   =>  'required',
+            'public'            =>  'required',
+            'active'            =>  'required'
+        ]);
+
+        $petition = new Petition($request->all());
+
+        $petition->save();
+
+        return redirect('admin');
+    }
+
+    public function edit(Petition $petition) {
+        $petition->load('signatures')->load('fields')->load('assets');
+
+        return view('admin.petitions.edit', compact('petition'));
     }
 
     public function update(Request $request, Petition $petition) {
         $petition->update($request->all());
 
         return back();
+    }
+
+    public function delete(Petition $petition) {
+        $petition->delete();
+
+        return redirect('admin');
     }
 
     public function storeSignature(Request $request, Petition $petition) {
