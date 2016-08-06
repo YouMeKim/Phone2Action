@@ -3,19 +3,21 @@
     <head>
         <meta charset="UTF-8">
         <title>Laravel</title>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="css/app.css">
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-
-        <style>
-            body {
-                font-family: "Lato", sans-serif;
-            }
-        </style>
 
         @yield('header')
 
     </head>
     <body>
+        <div id="header">
+            <div class="content">
+                <div id="title">
+                    <a href="">Advocacy Admin</a>
+                </div>
+                <div class="button"><a href="/">Advocacy</a></div>
+            </div>
+        </div>
         <div class="container">
             <div class="content">
 

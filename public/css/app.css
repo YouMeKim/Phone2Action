@@ -1,2 +1,96 @@
+html, body {
+  height: 100%; }
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: 'Open Sans', sans-serif; }
+
+.container {
+  padding: 20px 0px; }
+
+.content {
+  width: 1000px;
+  margin: 0px auto;
+  overflow: auto; }
+
+#header {
+  background-color: #046791;
+  color: #fafafa; }
+  #header #title {
+    float: left;
+    font-size: 18px;
+    line-height: 50px; }
+    #header #title a {
+      text-decoration: none;
+      color: #fafafa; }
+  #header .button {
+    float: right;
+    height: 50px;
+    line-height: 50px;
+    font-size: 14px;
+    font-weight: 200;
+    cursor: pointer; }
+    #header .button a {
+      display: block;
+      text-decoration: none;
+      color: #fafafa;
+      width: 100px;
+      padding: 0px auto;
+      text-align: center; }
+  #header .button:hover {
+    background-color: rgba(255, 255, 255, 0.1); }
+
+#form-login {
+  width: 200px;
+  margin: 0px auto;
+  padding: 20px;
+  border: 1px solid #046791; }
+
+label {
+  font-size: 12px; }
+
+button {
+  display: inline-block;
+  background-color: #046791;
+  color: #fafafa;
+  font-size: 12px;
+  font-weight: 200;
+  padding: 5px 20px;
+  width: 100%;
+  margin-top: 10px;
+  text-decoration: none;
+  border: 0px; }
+
+.button-large {
+  display: inline-block;
+  background-color: #046791;
+  color: #fafafa;
+  font-size: 30px;
+  padding: 30px 50px;
+  border-radius: 20px;
+  text-decoration: none; }
+
+.section {
+  min-height: 400px; }
+
+.title {
+  line-height: 200px;
+  font-weight: 100;
+  font-size: 60px; }
+
+.notice {
+  color: #555;
+  font-size: 14px; }
+
+.text-center {
+  text-align: center; }
+
+.text-left {
+  text-align: left; }
+
+.text-right {
+  text-align: right; }
 
 /*# sourceMappingURL=app.css.map */
