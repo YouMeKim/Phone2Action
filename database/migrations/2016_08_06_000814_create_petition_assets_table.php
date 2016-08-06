@@ -12,8 +12,6 @@ class CreatePetitionAssetsTable extends Migration
      */
     public function up()
     {
-        Schema::dropIfExists('petition_assets');
-
         Schema::create('petition_assets', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('petitionid')->unsigned();

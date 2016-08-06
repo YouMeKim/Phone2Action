@@ -12,14 +12,12 @@ class CreatePetitionsTable extends Migration
      */
     public function up()
     {
-        Schema::dropIfExists('petitions');
-
         Schema::create('petitions', function (Blueprint $table) {
             $table->increments('id');
             $table->boolean('public');
             $table->boolean('active');
             $table->string('title');
-            $table->mediumText('summary');
+            $table->text('summary');
             $table->longText('body');
             $table->timestamps();
         });

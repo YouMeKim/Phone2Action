@@ -12,8 +12,6 @@ class CreateSignaturesTable extends Migration
      */
     public function up()
     {
-        Schema::dropIfExists('signatures');
-
         Schema::create('signatures', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('petitionid')->unsigned();

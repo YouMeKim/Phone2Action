@@ -12,8 +12,6 @@ class CreatePetitionFieldsTable extends Migration
      */
     public function up()
     {
-        Schema::dropIfExists('petition_fields');
-
         Schema::create('petition_fields', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('petitionid')->unsigned();
