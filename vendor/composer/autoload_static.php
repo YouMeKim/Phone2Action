@@ -264,8 +264,11 @@ class ComposerStaticInit55a40a501e9e0e5421211b6f5ee9bab2
     );
 
     public static $classMap = array (
-        'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
-        'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
+        'CreatePetitionAssetsTable' => __DIR__ . '/../..' . '/database/migrations/2016_08_06_000814_create_petition_assets_table.php',
+        'CreatePetitionFieldsTable' => __DIR__ . '/../..' . '/database/migrations/2016_08_06_000802_create_petition_fields_table.php',
+        'CreatePetitionsTable' => __DIR__ . '/../..' . '/database/migrations/2016_08_05_225654_create_petitions_table.php',
+        'CreateSignaturesTable' => __DIR__ . '/../..' . '/database/migrations/2016_08_05_230421_create_signatures_table.php',
+        'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2016_08_06_023841_create_users_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
         'File_Iterator_Facade' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Facade.php',
