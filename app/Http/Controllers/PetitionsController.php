@@ -39,6 +39,12 @@ class PetitionsController extends Controller
 
     public function storeSignature(Request $request, Petition $petition) {
 
+        $this->validate($request, [
+            'firstname' =>  'required',
+            'lastname'  =>  'required',
+            'email'     =>  'required|email'
+        ]);
+
        $petition->signatures()->create($request->all());
 
         return back();

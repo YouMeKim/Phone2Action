@@ -16,24 +16,29 @@
         <div class="col-md-4">
             <div class="row">
                 <h4>Sign Today</h4>
+                @if (count($errors))
+                    @foreach ($errors->all() as $error)
+                        <p class="text-danger">{{ $error }}</p>
+                    @endforeach
+                @endif
                 <form method="POST" action="/petitions/{{ $petition->id }}/signatures">
+                    {{ csrf_field() }}
                     <div class="form-group">
                         <label for="firstname">First Name</label>
-                        <input type="text" class="form-control" id="firstname" name="firstname">
+                        <input type="text" class="form-control" id="firstname" name="firstname" value="{{ old('firstname') }}" required>
                     </div>
                     <div class="form-group">
                         <label for="lastname">Last Name</label>
-                        <input type="text" class="form-control" id="lastname" name="lastname">
+                        <input type="text" class="form-control" id="lastname" name="lastname" value="{{ old('lastname') }}" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="text" class="form-control" id="email" name="email">
+                        <input type="text" class="form-control" id="email" name="email" value="{{ old('email') }}" required>
                     </div>
                     <div class="form-group">
                         <label for="phone">Phone</label>
-                        <input type="text" class="form-control" id="phone" name="phone">
+                        <input type="text" class="form-control" id="phone" name="phone" value="{{ old('phone') }}">
                     </div>
-                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <button type="submit" class="btn btn-primary">Sign Petition</button>
                 </form>
             </div>
