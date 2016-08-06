@@ -19,7 +19,22 @@ class PetitionsController extends Controller
 
     public function show(Petition $petition) {
         $signatures = $petition->signatures();
+
         return view('petitions.show', compact('petition', 'signatures'));
+    }
+
+    public function edit(Petition $petition) {
+        $signatures = $petition->signatures();
+        $fields = $petition->fields();
+        $assets = $peitions->assets();
+
+        return view('petitions.edit', compact('petition', 'signatures', 'fields', 'assets'));
+    }
+
+    public function update(Request $request, Petition $petition) {
+        $petition->update($request->all());
+
+        return back();
     }
 
     public function storeSignature(Request $request, Petition $petition) {
