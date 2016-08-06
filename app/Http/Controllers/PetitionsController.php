@@ -11,7 +11,7 @@ use App\Petition;
 class PetitionsController extends Controller
 {
     public function index() {
-        $petitions = Petition::all();
+        $petitions = Petition::all()->where('public',1)->where('active',1);
 
         return view('petitions.index', compact('petitions'));
     }
