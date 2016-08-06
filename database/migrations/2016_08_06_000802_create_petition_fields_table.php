@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePetitionAssetTable extends Migration
+class CreatePetitionFieldsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,18 +12,17 @@ class CreatePetitionAssetTable extends Migration
      */
     public function up()
     {
-        Schema::dropIfExists('petition_asset');
+        Schema::dropIfExists('petition_fields');
 
-        Schema::create('petition_asset', function (Blueprint $table) {
+        Schema::create('petition_fields', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('petitionid')->unsigned();
-            $table->string('type');
-            $table->string('location');
+            $table->enum('type',[]);
             $table->string('title');
-            $table->string('description');
+            $table->string('value');
             $table->timestamps();
 
-            $table->foreign('petitionid')->references('id')->on('petition');
+            $table->foreign('petitionid')->references('id')->on('petitions');
         });
     }
 
@@ -34,6 +33,6 @@ class CreatePetitionAssetTable extends Migration
      */
     public function down()
     {
-        Schema::drop('petition_asset');
+        Schema::drop('petition_fields');
     }
 }

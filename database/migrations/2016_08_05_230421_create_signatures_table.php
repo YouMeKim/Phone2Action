@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSignatureTable extends Migration
+class CreateSignaturesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,9 +12,9 @@ class CreateSignatureTable extends Migration
      */
     public function up()
     {
-        Schema::dropIfExists('signature');
+        Schema::dropIfExists('signatures');
 
-        Schema::create('signature', function (Blueprint $table) {
+        Schema::create('signatures', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('petitionid')->unsigned();
             $table->string('firstname');
@@ -24,7 +24,7 @@ class CreateSignatureTable extends Migration
             $table->boolean('notified');
             $table->timestamps();
 
-            $table->foreign('petitionid')->references('id')->on('petition');
+            $table->foreign('petitionid')->references('id')->on('petitions');
         });
     }
 
@@ -35,6 +35,6 @@ class CreateSignatureTable extends Migration
      */
     public function down()
     {
-        Schema::drop('signature');
+        Schema::drop('signatures');
     }
 }
