@@ -2,9 +2,9 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Laravel</title>
+        <title>Advocacy</title>
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="css/app.css">
+        <link rel="stylesheet" href="/css/app.css">
 
         @yield('header')
 
