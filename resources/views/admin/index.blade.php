@@ -2,11 +2,19 @@
 
 @section('content')
     <div class="text-center"><p class="notice">Please log in to access the admin panel</p></div>
-    <form id="form-login">
-        <table>
-            <tr><td><label for="username">Username</label></td><td><input type="text" id="username" name="username"></td></tr>
-            <tr><td><label for="password">Password</label></td><td><input type="password" id="password" name="password"></td></tr>
-            <tr><td colspan="2"><button id="login" value="login">Login</button></td></tr>
-        </table>
-    </form>
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <form id="form-login">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control" id="username" name="username">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" name="password">
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+    </div>
 @stop
