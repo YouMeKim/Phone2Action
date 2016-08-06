@@ -17,6 +17,7 @@ class PetitionsController extends Controller
     }
 
     public function show(Petition $petition) {
-        return view('petitions.show', compact('petition'));
+        $signatures = $petition->signatures();
+        return view('petitions.show', compact('petition', 'signatures'));
     }
 }
