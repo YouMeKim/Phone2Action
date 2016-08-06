@@ -14,14 +14,14 @@ class CreatePetitionAssetsTable extends Migration
     {
         Schema::create('petition_assets', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('petitionid')->unsigned();
+            $table->integer('petition_id')->unsigned();
             $table->string('type');
             $table->string('location');
             $table->string('title');
             $table->string('description');
             $table->timestamps();
 
-            $table->foreign('petitionid')->references('id')->on('petitions');
+            $table->foreign('petition_id')->references('id')->on('petitions');
         });
     }
 

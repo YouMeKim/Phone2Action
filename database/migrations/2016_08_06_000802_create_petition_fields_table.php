@@ -14,13 +14,13 @@ class CreatePetitionFieldsTable extends Migration
     {
         Schema::create('petition_fields', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('petitionid')->unsigned();
+            $table->integer('petition_id')->unsigned();
             $table->enum('type',[]);
             $table->string('title');
             $table->string('value');
             $table->timestamps();
 
-            $table->foreign('petitionid')->references('id')->on('petitions');
+            $table->foreign('petition_id')->references('id')->on('petitions');
         });
     }
 

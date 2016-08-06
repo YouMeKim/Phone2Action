@@ -14,7 +14,7 @@ class CreateSignaturesTable extends Migration
     {
         Schema::create('signatures', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('petitionid')->unsigned();
+            $table->integer('petition_id')->unsigned();
             $table->string('firstname');
             $table->string('lastname');
             $table->string('email');
@@ -22,7 +22,7 @@ class CreateSignaturesTable extends Migration
             $table->boolean('notified');
             $table->timestamps();
 
-            $table->foreign('petitionid')->references('id')->on('petitions');
+            $table->foreign('petition_id')->references('id')->on('petitions');
         });
     }
 
