@@ -18,3 +18,4 @@ Route::get('admin', 'PagesController@admin');
 
 Route::get('petitions', 'PetitionsController@index');
 Route::get('petitions/{petition}', 'PetitionsController@show');
+Route::post('petitions/{petition}/signatures', 'PetitionsController@storeSignature');

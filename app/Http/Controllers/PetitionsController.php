@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 
 use App\Petition;
+use App\Signature;
 
 class PetitionsController extends Controller
 {
@@ -19,5 +20,12 @@ class PetitionsController extends Controller
     public function show(Petition $petition) {
         $signatures = $petition->signatures();
         return view('petitions.show', compact('petition', 'signatures'));
+    }
+
+    public function storeSignature(Request $request, Petition $petition) {
+
+       $petition->signatures()->create($request->all());
+
+        return back();
     }
 }
