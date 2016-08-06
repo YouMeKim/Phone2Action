@@ -6,6 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Petition extends Model
 {
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'public', 'active', 'title', 'summary', 'body', 'thankyoumessage'
+    ];
+
     public function signatures() {
         return $this->hasMany('App\Signature');
     }
